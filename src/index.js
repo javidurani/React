@@ -2,14 +2,24 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './style.css'
 
 //other than the return statement, the function is a simple JS function
 //the <div>Hello World!</div> is the syntax JSX
 // what this does is that it calls the function, gets the JSX, and renders the HTML to the DOM
+// you can store vars in the function by declaring the var outside and calling it inside the function.
 
+let name = "javi";
 
 function Hi(){
-    return <div>Hello World!</div>
+    return <div><strong>Hello {name}</strong>
+    <h1>Welcome to React</h1>
+    <h2>So far all is good</h2>
+    <li>test 1</li>
+    <li>test 2</li>
+
+    {5 + 10}
+    </div>
 }
 
 //this is what makes the function work
