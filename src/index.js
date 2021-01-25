@@ -67,3 +67,44 @@ function HiFullName(props) {
 
 //here we define what the firstname and lastname are
 <HiFullName firstname = "Javier" lastname = "Duran"/>
+
+//there are different ways of writing the "Hi" function with the name constant
+
+//the default
+function Hi({ name }) {
+    return <div>Hello {name}!</div>;
+  }
+
+//the function in a constant
+const Hi = function({ name }) {
+    return <div>Hello {name}!</div>;
+  }
+
+// it can also be put into a const without the function which is useful if its short
+const Hi = ({ name }) => <div>Hello {name}!</div>;
+
+//option const Hi = ({ name }) => (<div>Hello {name}!</div>)
+//^^ the parenthesees can be used if more space is required
+
+//practice
+
+//these have to be wrapped in a parent div otherwise they cant be returned!
+function MediaCard({ title, body, imageURL}){
+<div>
+    <h2>{title}
+        <p>{body}</p>
+            <img src = {imageURL}/>
+    </h2>
+</div>
+}
+ReactDOM.render(<MediaCard/>, document.querySelector('#root'))
+
+function Gate({isOpen}){
+    if (isOpen){
+        ReactDOM.render(<isOpen status = "open"/> )
+    }
+
+    else{
+        ReactDOM.render(<isOpen status = "closed"/>)
+    }
+}
