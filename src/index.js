@@ -89,7 +89,7 @@ ReactDOM.render(<Hi name="Javi"/>), document.querySelector('#root')
 
 //practice
 
-//these have to be wrapped in a parent div otherwise they cant be returned!
+
 
 ReactDOM.render(<MediaCard/>, document.querySelector('#root'))
 

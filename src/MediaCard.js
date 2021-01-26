@@ -8,3 +8,5 @@ function MediaCard({ title, body, imageURL}){
     }
 
 export function MediaCard();
+
+//these have to be wrapped in a parent div otherwise they cant be returned!

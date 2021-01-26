@@ -3,3 +3,5 @@ function greet(name){
 }
 
 export function greet()
+
+//simple greet function
