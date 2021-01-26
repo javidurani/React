@@ -3,7 +3,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './style.css'
+import MediaCard from MediaCard
+import HiFullName from HiFullName
+import greet from greet
+import Gate from Gate
+import Room from Room
+import Reddit from Reddit
 
+//how to export functions from other files:
+// export function (thename)()
+//import (thename) from (thename)
+ 
 //other than the return statement, the function is a simple JS function
 //the <div>Hello World!</div> is the syntax JSX
 // what this does is that it calls the function, gets the JSX, and renders the HTML to the DOM
@@ -33,9 +43,6 @@ ReactDOM.render(<Hi/>, document.querySelector('#root'));
 //the code will compile in babel to a simpler version that is pure javascript
 
 //simple function that calls the name var and greets 
-function greet(name){
-    return "hi " + name;
-}
 
 //working with props
 //new parameter will be props
@@ -58,30 +65,24 @@ ReactDOM.render(<Hi name="Javi"/>), document.querySelector('#root')
 
 //these bars {} also determine whether somethings a string or js function
 
-<Sidebar hidden ="false"/> //string
-<Sidebar hidden = {false}/> //js expression
-//there can also be multiple props
-function HiFullName(props) {
-    return(<div>Hi {props.firstname} {props.lastname}!</div>)
-}
+//<Sidebar hidden ="false"/> //string
+//<Sidebar hidden = {false}/> //js expression
 
-//here we define what the firstname and lastname are
-<HiFullName firstname = "Javier" lastname = "Duran"/>
 
 //there are different ways of writing the "Hi" function with the name constant
 
 //the default
-function Hi({ name }) {
-    return <div>Hello {name}!</div>;
-  }
+//function Hi({ name }) {
+//    return <div>Hello {name}!</div>;
+//  }
 
 //the function in a constant
-const Hi = function({ name }) {
-    return <div>Hello {name}!</div>;
-  }
+//const Hi = function({ name }) {
+//    return <div>Hello {name}!</div>;
+//  }
 
 // it can also be put into a const without the function which is useful if its short
-const Hi = ({ name }) => <div>Hello {name}!</div>;
+//const Hi = ({ name }) => <div>Hello {name}!</div>;
 
 //option const Hi = ({ name }) => (<div>Hello {name}!</div>)
 //^^ the parenthesees can be used if more space is required
@@ -89,22 +90,9 @@ const Hi = ({ name }) => <div>Hello {name}!</div>;
 //practice
 
 //these have to be wrapped in a parent div otherwise they cant be returned!
-function MediaCard({ title, body, imageURL}){
-<div>
-    <h2>{title}
-        <p>{body}</p>
-            <img src = {imageURL}/>
-    </h2>
-</div>
-}
+
 ReactDOM.render(<MediaCard/>, document.querySelector('#root'))
 
-function Gate({isOpen}){
-    if (isOpen){
-        ReactDOM.render(<isOpen status = "open"/> )
-    }
+ReactDOM.render(<Reddit />, document.getElementById("root"))
 
-    else{
-        ReactDOM.render(<isOpen status = "closed"/>)
-    }
-}
+
